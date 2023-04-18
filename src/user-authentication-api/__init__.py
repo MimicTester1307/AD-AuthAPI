@@ -27,16 +27,16 @@ print(students)
 
 
 # Reading a single student
-@app.route("/Students/<string:id>", methods=["GET"])
-def get_student(slug):
-    student = students.find_one_or_404({"id": id})
+@app.route("/Students/<int:id_>", methods=["GET"])
+def get_student(id_: int):
+    student = students.find_one_or_404({"student_id": id_})
     return Student(**student).to_json()
 
 
 # Reading a single staff
-@app.route("/Staff/<string:id>", methods=["GET"])
-def get_staff(slug):
-    staff = staff_.find_one_or_404({"id": id})
+@app.route("/Staff/<int:id_>", methods=["GET"])
+def get_staff(id_: int):
+    staff = staff_.find_one_or_404({"staff_id": id_})
     return Staff(**staff).to_json()
 
 
@@ -129,4 +129,4 @@ def resource_not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

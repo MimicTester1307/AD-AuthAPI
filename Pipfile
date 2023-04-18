@@ -11,6 +11,7 @@ flask-pymongo = "*"
 pydantic = "*"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+pyodbc = "*"
 
 [dev-packages]
 
