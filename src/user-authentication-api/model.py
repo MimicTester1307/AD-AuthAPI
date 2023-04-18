@@ -12,11 +12,10 @@ from .objectid import PydanticObjectId
 
 
 class Student(BaseModel):
-    id: Optional[PydanticObjectId] = Field(None, alias="_id")
-    # slug: str    # a unique, URL-safe mnemonic used for identifying a document
+    # id: Optional[PydanticObjectId] = Field(None, alias="_id")
     student_id: int
     email: str
-    password: str
+    is_student: bool = True
 
     def to_json(self):
         return jsonable_encoder(self, exclude_none=True)
@@ -29,11 +28,10 @@ class Student(BaseModel):
 
 
 class Staff(BaseModel):
-    id: Optional[PydanticObjectId] = Field(None, alias="_id")
-    # slug: str
+    # id: Optional[PydanticObjectId] = Field(None, alias="_id")
     staff_id: int
     email: str
-    password: str
+    is_staff: bool = True
 
     def to_json(self):
         return jsonable_encoder(self, exclude_none=True)
