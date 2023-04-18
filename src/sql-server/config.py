@@ -12,10 +12,9 @@ PASSWORD = os.environ.get("MSSQL_USER_PSSWD")
 PORT = os.environ.get("PORT")
 DRIVER = os.environ.get("ODBC_DRIVER")
 
-CONNECTION_STRING = f'Driver={DRIVER};Server=tcp:{SERVER},{PORT};Database={DB};Uid={USERNAME};Pwd={PASSWORD};Encrypt' \
-                    f'=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
-
-def connect_to_db(server, db, u_name, psswd, driver):
-    conn = pyodbc.connect(CONNECTION_STRING)
+def connect_to_db(server, db, u_name, psswd, port, driver):
+    connection_string = f'Driver={driver};Server=tcp:{server},{port};Database={db};Uid={u_name};Pwd={psswd};Encrypt' \
+                        f'=yes;TrustServerCertificate=no;Connection Timeout=30;'
+    conn = pyodbc.connect(connection_string)
     return conn
