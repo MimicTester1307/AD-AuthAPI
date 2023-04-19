@@ -12,6 +12,7 @@ pydantic = "*"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 pyodbc = "*"
+gunicorn = "*"
 
 [dev-packages]
 
