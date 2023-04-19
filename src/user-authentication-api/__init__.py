@@ -10,8 +10,8 @@ from flask import Flask, request, url_for, jsonify
 from flask_pymongo import PyMongo
 from pymongo.errors import DuplicateKeyError
 
-from .model import Student, Staff
-from .objectid import PydanticObjectId
+from model import Student, Staff
+from objectid import PydanticObjectId
 
 # configure flask
 load_dotenv()
