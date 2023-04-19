@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Union
 from datetime import datetime
 
-from objectid import PydanticObjectId
+from .objectid import PydanticObjectId
 
 
 class Student(BaseModel):
